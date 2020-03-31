@@ -86,3 +86,5 @@ Blood Alliance je aplikacija za lakše i brže svakodnevno spašavanje života. 
 •	Registrovani donori
 
 •	Neregstrovani donori / gost aplikacije
+
+• Sistem za slanje obavještenja
