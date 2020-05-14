@@ -19,8 +19,8 @@ namespace BloodAlliance.Models
         public int BrojDarivanja { get; set; }
         public double TjelesnaTezina { get; set; }
 
-        public virtual ICollection<Donor> Donori { get; set; }
-        public virtual ZdravstvenaHistorija ZdravstvenaHistorija { get; set; }
+        public virtual ICollection<Donacija> Donacije { get; set; }
+       // public virtual ZdravstvenaHistorija ZdravstvenaHistorija { get; set; }
         public virtual ICollection<ObavijestDonor> Obavijesti { get; set; }
 
 

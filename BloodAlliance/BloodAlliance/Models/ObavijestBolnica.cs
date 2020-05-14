@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BloodAlliance.Models
 {
-    public class ObavijestBolnica:Obavijest
+    public class ObavijestBolnica //:Obavijest
     {
         public int ObavijestBolnicaId { get; set; }
         public String KrvnaGrupa { get; set; }
