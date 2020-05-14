@@ -5401,11 +5401,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fahira\\source\\repos\\ooad-2019-2020\\Grupa7-BloodAlliance\\BloodAlliance\\BloodAlliance\\BloodAlliance.csproj",
+      "projectUniqueName": "C:\\Users\\Fahira\\Source\\Repos\\ooad-2019-2020\\Grupa7-BloodAlliance\\BloodAlliance\\BloodAlliance\\BloodAlliance.csproj",
       "projectName": "BloodAlliance",
-      "projectPath": "C:\\Users\\Fahira\\source\\repos\\ooad-2019-2020\\Grupa7-BloodAlliance\\BloodAlliance\\BloodAlliance\\BloodAlliance.csproj",
+      "projectPath": "C:\\Users\\Fahira\\Source\\Repos\\ooad-2019-2020\\Grupa7-BloodAlliance\\BloodAlliance\\BloodAlliance\\BloodAlliance.csproj",
       "packagesPath": "C:\\Users\\Fahira\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fahira\\source\\repos\\ooad-2019-2020\\Grupa7-BloodAlliance\\BloodAlliance\\BloodAlliance\\obj\\",
+      "outputPath": "C:\\Users\\Fahira\\Source\\Repos\\ooad-2019-2020\\Grupa7-BloodAlliance\\BloodAlliance\\BloodAlliance\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Fahira\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5471,7 +5471,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

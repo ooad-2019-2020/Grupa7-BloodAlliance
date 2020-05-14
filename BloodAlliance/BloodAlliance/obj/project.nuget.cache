@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e9Et2J51rS3ajSd2UdMuX7foqP6JBzlkT1DC2HD1199txzz9fQeFC6maYQYZw6P121kaPbcZOzVMZOPrfGsn4A==",
+  "dgSpecHash": "3YYd+oyh6VJB4hzwTgferbUjw8z3xBbk/T85lN37974iUYYOdwvG/EAXkOZzHXD5weeJZ2aVBbdE4J7vdau3rg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Fahira\\source\\repos\\ooad-2019-2020\\Grupa7-BloodAlliance\\BloodAlliance\\BloodAlliance\\BloodAlliance.csproj",
+  "projectFilePath": "C:\\Users\\Fahira\\Source\\Repos\\ooad-2019-2020\\Grupa7-BloodAlliance\\BloodAlliance\\BloodAlliance\\BloodAlliance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fahira\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.3\\microsoft.aspnetcore.cryptography.internal.3.1.3.nupkg.sha512",
     "C:\\Users\\Fahira\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.3\\microsoft.aspnetcore.cryptography.keyderivation.3.1.3.nupkg.sha512",
