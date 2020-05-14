@@ -12,6 +12,7 @@ using BloodAlliance.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using BloodAlliance.Models;
 
 namespace BloodAlliance
 {
@@ -29,9 +30,10 @@ namespace BloodAlliance
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("BAConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDbContext<BAContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BAConnection")));
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
