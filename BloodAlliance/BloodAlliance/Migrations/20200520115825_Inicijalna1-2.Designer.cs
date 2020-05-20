@@ -4,14 +4,16 @@ using BloodAlliance.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BloodAlliance.Migrations
 {
     [DbContext(typeof(BAContext))]
-    partial class BAContextModelSnapshot : ModelSnapshot
+    [Migration("20200520115825_Inicijalna1-2")]
+    partial class Inicijalna12
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,32 +23,16 @@ namespace BloodAlliance.Migrations
 
             modelBuilder.Entity("BloodAlliance.Models.Bolnica", b =>
                 {
-                    b.Property<int>("BolnicaId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("BolnicaId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Adresa")
-                        .IsRequired()
+                    b.Property<string>("EMail")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BrojTelefona")
+                    b.Property<string>("adresa")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Naziv")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Username")
-                        .IsRequired()
+                    b.Property<string>("naziv")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BolnicaId");
@@ -56,34 +42,26 @@ namespace BloodAlliance.Migrations
 
             modelBuilder.Entity("BloodAlliance.Models.Donacija", b =>
                 {
-                    b.Property<int>("DonacijaId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("DonacijaId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("DatumDonacije")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("DonorId")
-                        .HasColumnType("int");
+                    b.Property<string>("DonorId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ImeDoktora")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("KrvnaGrupa")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ObavijestBolnicaId")
                         .HasColumnType("int");
 
                     b.Property<string>("RhFaktor")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SifraDonacije")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("datumDonacije")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("DonacijaId");
 
@@ -96,10 +74,8 @@ namespace BloodAlliance.Migrations
 
             modelBuilder.Entity("BloodAlliance.Models.Donor", b =>
                 {
-                    b.Property<int>("DonorId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("DonorId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("BrojDarivanja")
                         .HasColumnType("int");
@@ -107,71 +83,28 @@ namespace BloodAlliance.Migrations
                     b.Property<string>("BrojTelefona")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DatumPosljednjeDonacije")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Hemoglobin")
-                        .IsRequired()
+                    b.Property<string>("EMail")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Ime")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Jmbg")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("KrvnaGrupa")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KrvniPritisak")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MjestoDarivanja")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Pol")
-                        .HasColumnType("int");
 
                     b.Property<string>("Prezime")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RhFaktor")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StatusDonora")
-                        .HasColumnType("int");
 
                     b.Property<double>("TjelesnaTezina")
                         .HasColumnType("float");
 
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ZdravstvenaHistorijaId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ZdravstvenaHistorijaId1")
-                        .HasColumnType("int");
-
                     b.HasKey("DonorId");
-
-                    b.HasIndex("ZdravstvenaHistorijaId1");
 
                     b.ToTable("Donor");
                 });
@@ -183,8 +116,8 @@ namespace BloodAlliance.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BolnicaId")
-                        .HasColumnType("int");
+                    b.Property<string>("BolnicaId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("Datum")
                         .HasColumnType("datetime2");
@@ -209,8 +142,8 @@ namespace BloodAlliance.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("DonorId")
-                        .HasColumnType("int");
+                    b.Property<string>("DonorId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Obavijest")
                         .HasColumnType("nvarchar(max)");
@@ -229,8 +162,8 @@ namespace BloodAlliance.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BolnicaId")
-                        .HasColumnType("int");
+                    b.Property<string>("BolnicaId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("KrvnaGrupa")
                         .HasColumnType("nvarchar(max)");
@@ -247,16 +180,11 @@ namespace BloodAlliance.Migrations
 
             modelBuilder.Entity("BloodAlliance.Models.ZdravstvenaHistorija", b =>
                 {
-                    b.Property<int>("ZdravstvenaHistorijaId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<bool>("ZdravstvenaHistorijaId")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("BolestiRespiratornogSistema")
                         .HasColumnType("bit");
-
-                    b.Property<int>("DonorId")
-                        .HasColumnType("int");
 
                     b.Property<bool>("HormonalniPoremecaji")
                         .HasColumnType("bit");
@@ -278,27 +206,18 @@ namespace BloodAlliance.Migrations
 
                     b.HasKey("ZdravstvenaHistorijaId");
 
-                    b.ToTable("ZdravstvenaHistorija");
+                    b.ToTable("ZdravstvenaHistroija");
                 });
 
             modelBuilder.Entity("BloodAlliance.Models.Donacija", b =>
                 {
                     b.HasOne("BloodAlliance.Models.Donor", "Donor")
                         .WithMany("Donacije")
-                        .HasForeignKey("DonorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DonorId");
 
-                    b.HasOne("BloodAlliance.Models.ObavijestBolnica", null)
+                    b.HasOne("BloodAlliance.Models.ObavijestBolnica", "Obavijest")
                         .WithMany("Donacije")
                         .HasForeignKey("ObavijestBolnicaId");
-                });
-
-            modelBuilder.Entity("BloodAlliance.Models.Donor", b =>
-                {
-                    b.HasOne("BloodAlliance.Models.ZdravstvenaHistorija", "ZdravstvenaHistorija")
-                        .WithMany()
-                        .HasForeignKey("ZdravstvenaHistorijaId1");
                 });
 
             modelBuilder.Entity("BloodAlliance.Models.ObavijestBolnica", b =>

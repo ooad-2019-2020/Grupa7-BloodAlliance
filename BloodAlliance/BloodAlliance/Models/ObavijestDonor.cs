@@ -8,7 +8,7 @@ namespace BloodAlliance.Models
     public class ObavijestDonor //:Obavijest
     {
         public int ObavijestDonorId { get; set; }
-        public String Obavijest { get; set; }
+        public string Obavijest { get; set; }
         public virtual Donor Donor { get; set; }
 
     }

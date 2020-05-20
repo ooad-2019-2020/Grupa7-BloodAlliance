@@ -9,11 +9,9 @@ namespace BloodAlliance.Models
     public class BAContext:DbContext
     {
         public BAContext(DbContextOptions<BAContext> options) : base(options) { }
-
-        public DbSet<Donor> Donor { get; set; }
         public DbSet<Bolnica> Bolnica { get; set; }
         public DbSet<Donacija> Donacija { get; set; }
-        public DbSet<Obavijest> Obavijest { get; set; }
+        public DbSet<Donor> Donor { get; set; }
         public DbSet<ObavijestBolnica> ObavijestBolnica { get; set; }
         public DbSet<ObavijestDonor> ObavijestDonor { get; set; }
         public DbSet<Zahtjev> Zahtjev { get; set; }
@@ -21,14 +19,14 @@ namespace BloodAlliance.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Donor>().ToTable("Donor");
+
             modelBuilder.Entity<Bolnica>().ToTable("Bolnica");
             modelBuilder.Entity<Donacija>().ToTable("Donacija");
-            modelBuilder.Entity<Obavijest>().ToTable("Obavijest");
+            modelBuilder.Entity<Donor>().ToTable("Donor");
             modelBuilder.Entity<ObavijestBolnica>().ToTable("ObavijestBolnica");
             modelBuilder.Entity<ObavijestDonor>().ToTable("ObavijestDonor");
             modelBuilder.Entity<Zahtjev>().ToTable("Zahtjev");
-            modelBuilder.Entity<ZdravstvenaHistorija>().ToTable("ZdravstvenaHistroija");
+            modelBuilder.Entity<ZdravstvenaHistorija>().ToTable("ZdravstvenaHistorija");
         }
 
     }
