@@ -1,0 +1,137 @@
+﻿@model IEnumerable<BloodAlliance.Models.Donor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prezime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrojTelefona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jmbg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KrvnaGrupa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RhFaktor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrojDarivanja)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TjelesnaTezina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MjestoDarivanja)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatumPosljednjeDonacije)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hemoglobin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KrvniPritisak)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusDonora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZdravstvenaHistorijaId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prezime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrojTelefona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jmbg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KrvnaGrupa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RhFaktor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrojDarivanja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TjelesnaTezina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MjestoDarivanja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatumPosljednjeDonacije)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hemoglobin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KrvniPritisak)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusDonora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZdravstvenaHistorijaId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DonorId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DonorId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DonorId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

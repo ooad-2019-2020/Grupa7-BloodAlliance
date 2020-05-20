@@ -15,7 +15,7 @@ namespace BloodAlliance.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.3")
+                .HasAnnotation("ProductVersion", "3.1.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -166,12 +166,9 @@ namespace BloodAlliance.Migrations
                     b.Property<int>("ZdravstvenaHistorijaId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ZdravstvenaHistorijaId1")
-                        .HasColumnType("int");
-
                     b.HasKey("DonorId");
 
-                    b.HasIndex("ZdravstvenaHistorijaId1");
+                    b.HasIndex("ZdravstvenaHistorijaId");
 
                     b.ToTable("Donor");
                 });
@@ -232,11 +229,11 @@ namespace BloodAlliance.Migrations
                     b.Property<int?>("BolnicaId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("Datum")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("KrvnaGrupa")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("datum")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("ZahtjevId");
 
@@ -254,9 +251,6 @@ namespace BloodAlliance.Migrations
 
                     b.Property<bool>("BolestiRespiratornogSistema")
                         .HasColumnType("bit");
-
-                    b.Property<int>("DonorId")
-                        .HasColumnType("int");
 
                     b.Property<bool>("HormonalniPoremecaji")
                         .HasColumnType("bit");
@@ -298,7 +292,9 @@ namespace BloodAlliance.Migrations
                 {
                     b.HasOne("BloodAlliance.Models.ZdravstvenaHistorija", "ZdravstvenaHistorija")
                         .WithMany()
-                        .HasForeignKey("ZdravstvenaHistorijaId1");
+                        .HasForeignKey("ZdravstvenaHistorijaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BloodAlliance.Models.ObavijestBolnica", b =>

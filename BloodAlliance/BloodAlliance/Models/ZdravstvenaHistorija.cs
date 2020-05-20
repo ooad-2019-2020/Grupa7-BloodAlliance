@@ -14,7 +14,7 @@ namespace BloodAlliance.Models
         public bool HormonalniPoremecaji { get; set; }
         public bool Secer { get; set; }
         public bool HronicneBolesti { get; set; }
-        public int DonorId { get; set; }
+       // public int DonorId { get; set; }
         public bool NervniProblemi { get; set; }
         public bool ProvjeraHistorijeBolesti() { return true; }
         public List<string> VratiSveBolesti()

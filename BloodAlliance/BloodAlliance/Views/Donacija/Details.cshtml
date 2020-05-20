@@ -1,0 +1,48 @@
+﻿@model BloodAlliance.Models.Donacija
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Donacija</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SifraDonacije)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SifraDonacije)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KrvnaGrupa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KrvnaGrupa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DatumDonacije)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DatumDonacije)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RhFaktor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RhFaktor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImeDoktora)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImeDoktora)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DonacijaId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

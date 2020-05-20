@@ -1,0 +1,59 @@
+﻿@model IEnumerable<BloodAlliance.Models.Donacija>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SifraDonacije)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KrvnaGrupa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatumDonacije)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RhFaktor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImeDoktora)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SifraDonacije)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KrvnaGrupa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatumDonacije)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RhFaktor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImeDoktora)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DonacijaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DonacijaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DonacijaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
