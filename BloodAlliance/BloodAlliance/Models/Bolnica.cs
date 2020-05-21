@@ -17,6 +17,7 @@ namespace BloodAlliance.Models
         public string Password { get; set; }
         [Required]
         public string Email { get; set; }
+        [Display(Name = "Broj telefona")]
         public string BrojTelefona { get; set; }
         [Required]
         public string Adresa { get; set; }

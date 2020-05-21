@@ -8,6 +8,7 @@ namespace BloodAlliance.Models
     public class ObavijestBolnica //:Obavijest
     {
         public int ObavijestBolnicaId { get; set; }
+      //  [Display(Name = "Krvna grupa")]
         public string KrvnaGrupa { get; set; }
         public int Kolicina { get; set; }
         public DateTime Datum { get; set; }

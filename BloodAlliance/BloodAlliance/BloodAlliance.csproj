@@ -23,4 +23,16 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\" />
+    <Folder Include="NewFolder1\" />
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\AllianceLogo.png" />
+    <None Include="wwwroot\Images\BloodLogo.png" />
+    <None Include="wwwroot\Images\SaveLifeLogo.png" />
+  </ItemGroup>
+
 </Project>

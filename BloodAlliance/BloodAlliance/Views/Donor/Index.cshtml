@@ -1,137 +1,167 @@
 ﻿@model IEnumerable<BloodAlliance.Models.Donor>
 
 @{
-    ViewData["Title"] = "Index";
+ViewData["Title"] = "#SAVELIFEDONATEBLOOD";
 }
 
-<h1>Index</h1>
+<h2>#SAVELIFEDONATEBLOOD</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
+
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Ime)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Prezime)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Username)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Password)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Email)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.BrojTelefona)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Jmbg)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.KrvnaGrupa)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.RhFaktor)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.BrojDarivanja)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.TjelesnaTezina)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.MjestoDarivanja)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.DatumPosljednjeDonacije)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Hemoglobin)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.KrvniPritisak)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Pol)
             </th>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.StatusDonora)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ZdravstvenaHistorijaId)
-            </th>
-            <th></th>
         </tr>
+    <tr></tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prezime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BrojTelefona)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Jmbg)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KrvnaGrupa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RhFaktor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BrojDarivanja)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TjelesnaTezina)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MjestoDarivanja)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DatumPosljednjeDonacije)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hemoglobin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KrvniPritisak)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pol)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StatusDonora)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ZdravstvenaHistorijaId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.DonorId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DonorId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DonorId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prezime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrojTelefona)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Jmbg)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KrvnaGrupa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RhFaktor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrojDarivanja)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TjelesnaTezina)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MjestoDarivanja)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DatumPosljednjeDonacije)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hemoglobin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KrvniPritisak)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StatusDonora)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DonorId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.DonorId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.DonorId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+<p>
+    <a asp-action="Create">Kreiraj donora</a>
+</p>
+<button asp-controller="ZdravstvenaHistorijaController" type="button" class="btn btn-danger">Zdravsvena historija</button>
+

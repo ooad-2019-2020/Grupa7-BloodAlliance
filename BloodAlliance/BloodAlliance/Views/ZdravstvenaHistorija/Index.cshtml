@@ -1,0 +1,71 @@
+﻿@model IEnumerable<BloodAlliance.Models.ZdravstvenaHistorija>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BolestiRespiratornogSistema)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SrcaniProblemi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolnoPrenosiveBolesti)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HormonalniPoremecaji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Secer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HronicneBolesti)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NervniProblemi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BolestiRespiratornogSistema)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SrcaniProblemi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolnoPrenosiveBolesti)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HormonalniPoremecaji)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Secer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HronicneBolesti)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NervniProblemi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ZdravstvenaHistorijaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ZdravstvenaHistorijaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ZdravstvenaHistorijaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -10,13 +10,18 @@ namespace BloodAlliance.Models
     {
         public int DonacijaId { get; set; }
         [Required]
+        [Display (Name = "Šifra donacije")]
         public string SifraDonacije { get; set; }
         [Required]
+        [Display(Name = "Krvna grupa")]
         public string KrvnaGrupa { get; set; }
         [Required]
+        [Display(Name = "Datum donacije")]
         public DateTime DatumDonacije { get; set; }
         [Required]
+        [Display(Name = "Rh faktor")]
         public string RhFaktor { get; set; }
+        [Display(Name = "Ime doktora")]
         public string ImeDoktora { get; set; }
         [Required]
         public virtual Donor Donor { get; set; }
