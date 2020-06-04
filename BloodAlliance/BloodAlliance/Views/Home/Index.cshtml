@@ -1,9 +1,28 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Home Page";
 }
 
-    <div class="text-center">
-       <h1 class="display-1 text-danger">Blood</h1>
-        <h1 class="display-1">Alliance</h1>
+<nav style="text-align: center">
+    <img src="~/Images/Logo3.png" width="870" height="450" />
+</nav>
+
+<div style="text-align: center">
+    <div style="text-align: center; display:inline-block">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login"> <img src="~/Images/loginn.png" height="220" width="240" /> </a>
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login"><b>LOGIN</b></a>
     </div>
+    <div style="text-align: center; display:inline-block">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">
+            <img src="~/Images/Guest.png" height="228" width="220" /> </a>
+            <p>
+                <a href="/Gost/Index" class="nav-link text-dark"><b>GOST</b></a>
+            </p>
+</div>
+</div>
+
+<div style="position: fixed; bottom: 3px; left: 70px">
+    <img src="~/Images/SaveLifeLogo.png" width="300" height="30"/>
+</div>
+
 
