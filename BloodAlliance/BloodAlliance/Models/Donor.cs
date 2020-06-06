@@ -60,9 +60,7 @@ public class Donor
         [Required]
         [Display(Name = "Krvni pritisak")]
         public string KrvniPritisak { get; set; }
-        [Required]
         public pol Pol { get; set; }
-        [Required]
         public statusDonora StatusDonora { get; set; }
         [Display(Name = "Zdravstvena historija")]
         public int ZdravstvenaHistorijaId { get; set; }
