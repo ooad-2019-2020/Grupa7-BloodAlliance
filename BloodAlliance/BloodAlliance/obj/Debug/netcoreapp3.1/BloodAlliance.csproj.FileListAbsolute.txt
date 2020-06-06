@@ -492,3 +492,5 @@ C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\ob
 C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\BloodAlliance.dll
 C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\BloodAlliance.pdb
 C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\BloodAlliance.genruntimeconfig.cache
+C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Gost\Informacije.cshtml.g.cs
+C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Gost\Test.cshtml.g.cs
