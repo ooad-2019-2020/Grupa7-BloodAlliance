@@ -12,5 +12,16 @@ namespace BloodAlliance.Controllers
         {
             return View();
         }
+
+        public IActionResult Test ()
+        {
+
+            return View();
+        }
+
+        public IActionResult Informacije ()
+        {
+            return View();
+        }
     }
 }
