@@ -72,8 +72,8 @@ namespace BloodAlliance.Controllers
             await _userManager.AddToRoleAsync(user, "Donor");
 
             
-                await _context.Donor.AddAsync(donor);
-                await _context.SaveChangesAsync();
+            await _context.Donor.AddAsync(donor);
+            await _context.SaveChangesAsync();
             
             
             return View(donor);
