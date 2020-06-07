@@ -502,3 +502,9 @@ C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\ob
 C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs

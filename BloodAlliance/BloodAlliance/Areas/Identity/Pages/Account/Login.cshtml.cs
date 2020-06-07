@@ -82,7 +82,7 @@ namespace BloodAlliance.Areas.Identity.Pages.Account
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
-                var user = await _userManager.FindByEmailAsync(Input.Email);
+                var user = await _userManager.FindByEmailAsync(Input.Email);              
                 var roles = await _userManager.GetRolesAsync(user);
                 if (result.Succeeded)
                 {
