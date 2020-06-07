@@ -6,16 +6,27 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BloodAlliance.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
+using BloodAlliance.Areas.Identity.Pages.Account;
+using Microsoft.AspNetCore.Authentication;
 
 namespace BloodAlliance.Controllers
 {
     public class DonorController : Controller
     {
         private readonly BAContext _context;
+        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly ILogger<RegisterModel> _logger;
 
-        public DonorController(BAContext context)
+        public List<AuthenticationScheme> ExternalLogins { get; private set; }
+
+        public DonorController(BAContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Donor
@@ -48,19 +59,23 @@ namespace BloodAlliance.Controllers
             return View();
         }
 
+       
         // POST: Donor/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DonorId,Ime,Prezime,Username,Password,Email,BrojTelefona,Jmbg,KrvnaGrupa,RhFaktor,BrojDarivanja,TjelesnaTezina,MjestoDarivanja,DatumPosljednjeDonacije,Hemoglobin,KrvniPritisak,Pol,StatusDonora,ZdravstvenaHistorijaId")] Donor donor)
+        public async Task<IActionResult> Create([Bind("DonorId,Ime,Prezime,Username,Password,Email,BrojTelefona,Jmbg,KrvnaGrupa,RhFaktor,BrojDarivanja,TjelesnaTezina,MjestoDarivanja,DatumPosljednjeDonacije,Hemoglobin,KrvniPritisak,ZdravstvenaHistorijaId")] Donor donor, string returnUrl)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(donor);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+            var user = new IdentityUser { UserName = donor.Username, Email = donor.Email, PhoneNumber = donor.BrojTelefona };
+            var result = await _userManager.CreateAsync(user, donor.Password);
+            await _userManager.AddToRoleAsync(user, "Donor");
+
+            
+            await _context.Donor.AddAsync(donor);
+            await _context.SaveChangesAsync();
+            
+            
             return View(donor);
         }
 

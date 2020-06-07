@@ -31,7 +31,7 @@ namespace BloodAlliance
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("BAConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<IdentityUser>().AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddDbContext<BAContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BAConnection")));
             services.AddControllersWithViews();
