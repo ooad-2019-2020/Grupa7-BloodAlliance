@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using System.Runtime.InteropServices;
 
 namespace BloodAlliance.Areas.Identity.Pages.Account
 {
@@ -75,17 +76,33 @@ namespace BloodAlliance.Areas.Identity.Pages.Account
         {
             returnUrl = returnUrl ?? Url.Content("~/");
 
+
             if (ModelState.IsValid)
             {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                var user = await _userManager.FindByEmailAsync(Input.Email);
+                var roles = await _userManager.GetRolesAsync(user);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+                    //return LocalRedirect(returnUrl);
+                    foreach (var role in roles)
+                    {
+                        if (role == "Donor")
+                        {
+                            returnUrl = Url.Action("Index", "Donor", new { area = ""});
+                            returnUrl = returnUrl ?? Url.Content("~/");
+                            return LocalRedirect(returnUrl);
+                        }
+
+                        
+                    }
+
                     return LocalRedirect(returnUrl);
                 }
-                if (result.RequiresTwoFactor)
+                /*if (result.RequiresTwoFactor)
                 {
                     return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
                 }
@@ -98,7 +115,12 @@ namespace BloodAlliance.Areas.Identity.Pages.Account
                 {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                     return Page();
-                }
+                }*/
+
+
+
+
+
             }
 
             // If we got this far, something failed, redisplay form
