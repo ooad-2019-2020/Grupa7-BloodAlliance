@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using BloodAlliance.Models;
 using Microsoft.AspNetCore.Identity;
 using static BloodAlliance.Areas.Identity.Pages.Account.LoginModel;
+using Microsoft.AspNetCore.Routing;
 
 namespace BloodAlliance.Controllers
 {
@@ -66,7 +67,8 @@ namespace BloodAlliance.Controllers
                     {
                         if(role == "Donor")
                         {
-                            return RedirectToAction("Index", "Donor");
+                            Donor donor = _context.Donor.FirstOrDefault(donor => donor.Email == model.Email);
+                            return RedirectToAction("Donor", new RouteValueDictionary(new { controller = "Donor", action = "Donor", email = donor.Email }));
                         } else if (role == "Administrator")
                         {
                             return RedirectToAction("Index", "Donacija");

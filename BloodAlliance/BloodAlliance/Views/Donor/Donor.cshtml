@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewData["Title"] = "#SAVELIFEDONATEBLOOD";
+}
+
+<h2>#SAVELIFEDONATEBLOOD</h2>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>
+                Ime
+            </th>
+
+
+            <th>
+                Prezime
+            </th>
+
+            <th>
+                Username
+            </th>
+
+            <th>
+                Password
+            </th>
+
+            <th>
+                Email
+            </th>
+
+            <th>
+                BrojTelefona
+            </th>
+
+            <th>
+                Jmbg
+            </th>
+
+            <th>
+                KrvnaGrupa
+            </th>
+
+            <th>
+                RhFaktor
+            </th>
+
+            <th>
+                BrojDarivanja
+            </th>
+
+            <th>
+                TjelesnaTezina
+            </th>
+
+            <th>
+                MjestoDarivanja
+            </th>
+
+            <th>
+                DatumPosljednjeDonacije
+            </th>
+
+            <th>
+                Hemoglobin
+            </th>
+
+            <th>
+                KrvniPritisak
+            </th>
+
+            <th>
+                Pol
+            </th>
+
+            <th>
+                StatusDonora
+            </th>
+        </tr>
+        <tr></tr>
+    </thead>
+    <tbody>
+        
+            <tr>
+                <td>
+                    @ViewBag.Ime
+                </td>
+                <td>
+                    @ViewBag.Prezime
+                </td>
+                <td>
+                    @ViewBag.Username
+                </td>
+                <td>
+                    @ViewBag.Password
+                </td>
+                <td>
+                    @ViewBag.Email
+                </td>
+                <td>
+                    @ViewBag.BrojTelefona
+                </td>
+                <td>
+                    @ViewBag.Jmbg
+                </td>
+                <td>
+                    @ViewBag.KrvnaGrupa
+                </td>
+                <td>
+                    @ViewBag.RhFaktor
+                </td>
+                <td>
+                    @ViewBag.BrojDarivanja
+                </td>
+                <td>
+                    @ViewBag.TjelesnaTezina
+                </td>
+                <td>
+                    @ViewBag.MjestoDarivanja
+                </td>
+                <td>
+                    @ViewBag.DatumPosljednjeDonacije
+                </td>
+                <td>
+                    @ViewBag.Hemoglobin
+                </td>
+                <td>
+                    @ViewBag.KrvniPritisak
+                </td>
+                <td>
+                    @ViewBag.Pol
+                </td>
+                <td>
+                    @ViewBag.StatusDonora
+                </td>
+                
+            </tr>
+        
+    </tbody>
+</table>
+
+<a href="/Donor/Create" class="btn btn-danger" role="button" aria-pressed="true"> Kreiraj donora </a>
+
+<br>
+<br>
+<a href="/ZdravstvenaHistorija/Index" class="btn btn-danger" role="button" aria-pressed="true"> Zdravstvena historija </a>

@@ -35,6 +35,31 @@ namespace BloodAlliance.Controllers
             return View(await _context.Donor.ToListAsync());
         }
 
+        public IActionResult Donor (string? email)
+        {
+            Donor donor = _context.Donor.FirstOrDefault(donor => donor.Email == email);
+
+            ViewBag.Ime = donor.Ime;
+            ViewBag.Prezime = donor.Prezime;
+            ViewBag.Username = donor.Username;
+            ViewBag.Password = donor.Password;
+            ViewBag.Email = donor.Email;
+            ViewBag.BrojTelefona = donor.BrojTelefona;
+            ViewBag.Jmbg = donor.Jmbg;
+            ViewBag.KrvnaGrupa = donor.KrvnaGrupa;
+            ViewBag.RhFaktor = donor.RhFaktor;
+            ViewBag.BrojDarivanja = donor.BrojDarivanja;
+            ViewBag.TjelesnaTezina = donor.TjelesnaTezina;
+            ViewBag.MjestoDarivanja = donor.MjestoDarivanja;
+            ViewBag.DatumPosljednjeDonacije = donor.DatumPosljednjeDonacije;
+            ViewBag.Hemoglobin = donor.Hemoglobin;
+            ViewBag.KrvniPritisak = donor.KrvniPritisak;
+            ViewBag.Pol = donor.Pol;
+            ViewBag.StatusDonora = donor.StatusDonora;
+
+            return View();
+        }
+
         // GET: Donor/Details/5
         public async Task<IActionResult> Details(int? id)
         {
