@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BloodAlliance.Models;
+using System.Globalization;
+using System.Security.Cryptography;
 
 namespace BloodAlliance.Controllers
 {
@@ -61,12 +63,12 @@ namespace BloodAlliance.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("DonacijaId,SifraDonacije,KrvnaGrupa,DatumDonacije,RhFaktor,ImeDoktora")] Donacija donacija)
         {
-            if (ModelState.IsValid)
-            {
+            
+                donacija.SifraDonacije = GenerisiSifru(donacija);
                 _context.Add(donacija);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+            
             return View(donacija);
         }
 
@@ -153,6 +155,54 @@ namespace BloodAlliance.Controllers
         private bool DonacijaExists(int id)
         {
             return _context.Donacija.Any(e => e.DonacijaId == id);
+        }
+
+        private string GenerisiSifru(Donacija donacija)
+        {
+            string sifra = "";
+
+            sifra = sifra + donacija.KrvnaGrupa.ToUpper();
+
+            if(donacija.RhFaktor.Equals("+"))
+            {
+                sifra = sifra + "POZ";
+            } else
+            {
+                sifra = sifra + "NEG";
+            }
+
+            sifra = sifra + donacija.DatumDonacije.Date.ToString("DDMMYY");
+
+            Random randomNumber = new Random();
+            String dodatak = "";
+
+            do
+            {
+                dodatak = randomNumber.Next(1000, 9999).ToString();
+            } while (ProvjeriSifru(sifra,dodatak));
+
+            sifra = sifra + dodatak;
+
+            return sifra;
+        }
+
+        private bool ProvjeriSifru(string sifra, string dodatak)
+        {
+            var donacije = _context.Donacija.ToList();
+
+            foreach(var donacija in donacije)
+            {
+                int duzina = donacija.SifraDonacije.Length;
+
+                if(donacija.SifraDonacije.Substring(0,duzina-4).Equals(sifra)) 
+                {
+                    if(donacija.SifraDonacije.Substring(duzina-4,duzina).Equals(dodatak))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }
