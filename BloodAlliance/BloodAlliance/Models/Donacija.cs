@@ -26,5 +26,15 @@ namespace BloodAlliance.Models
         [Required]
         public virtual Donor Donor { get; set; }
         public void UnosDonacije(Donacija donacija) { }
+
+        /*public Donacija (int id, string sifra, string krvnaGrupa, DateTime datum, string rhFaktor, string doktor)
+        {
+            DonacijaId = id;
+            SifraDonacije = sifra;
+            KrvnaGrupa = krvnaGrupa;
+            DatumDonacije = datum;
+            RhFaktor = rhFaktor;
+            ImeDoktora = doktor;
+        }*/
     }
 }

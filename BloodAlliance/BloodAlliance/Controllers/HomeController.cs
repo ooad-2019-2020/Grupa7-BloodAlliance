@@ -55,31 +55,40 @@ namespace BloodAlliance.Controllers
 
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl)
         {
-            if(ModelState.IsValid)
+             if(ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
-                if(result.Succeeded)
-                {
-                    var user = await _userManager.FindByEmailAsync(model.Email);
-                    var roles = await _userManager.GetRolesAsync(user);
-        
-                    foreach(var role in roles)
+                var user = await _userManager.FindByNameAsync(model.Username);
+                
+                    var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe, false);
+
+                    if (result.Succeeded)
                     {
-                        if(role == "Donor")
+
+
+                        var roles = await _userManager.GetRolesAsync(user);
+
+
+                        foreach (var role in roles)
                         {
-                            Donor donor = _context.Donor.FirstOrDefault(donor => donor.Email == model.Email);
-                            return RedirectToAction("Donor", new RouteValueDictionary(new { controller = "Donor", action = "Donor", email = donor.Email }));
-                        } else if (role == "Administrator")
-                        {
-                            return RedirectToAction("Index", "Donacija");
-                        } else if (role == "Bolnica")
-                        {
-                            return RedirectToAction("Index", "Bolnica");
+                            if (role == "Donor")
+                            {
+                                Donor donor = _context.Donor.FirstOrDefault(donor => donor.Username == model.Username);
+                                return RedirectToAction("Donor", new RouteValueDictionary(new { controller = "Donor", action = "Donor", email = donor.Email }));
+                            }
+                            else if (role == "Administrator")
+                            {
+                                return RedirectToAction("Index", "Donacija");
+
+                            }
+                            else if (role == "Bolnica")
+                            {
+                                return RedirectToAction("Index", "Bolnica");
+                            }
                         }
                     }
-                }
+                
             }
-            ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
+            else ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
 
             return View(model);
         }

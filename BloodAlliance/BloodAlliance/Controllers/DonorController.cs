@@ -92,7 +92,7 @@ namespace BloodAlliance.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("DonorId,Ime,Prezime,Username,Password,Email,BrojTelefona,Jmbg,KrvnaGrupa,RhFaktor,BrojDarivanja,TjelesnaTezina,MjestoDarivanja,DatumPosljednjeDonacije,Hemoglobin,KrvniPritisak,ZdravstvenaHistorijaId")] Donor donor, string returnUrl)
         {
-            var user = new IdentityUser { UserName = donor.Username, Email = donor.Email, PhoneNumber = donor.BrojTelefona, PasswordHash = donor.Password };
+            var user = new IdentityUser { UserName = donor.Username, Email = donor.Email, PhoneNumber = donor.BrojTelefona };
             var result = await _userManager.CreateAsync(user, donor.Password);
             await _userManager.AddToRoleAsync(user, "Donor");
 
