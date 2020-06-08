@@ -19,9 +19,15 @@ namespace BloodAlliance.Controllers
         }
 
         // GET: Donacija
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Pretraga(string upit)
         {
-            return View(await _context.Donacija.ToListAsync());
+            var donacije = _context.Donacija.AsQueryable();
+
+            if(!string.IsNullOrEmpty(upit))
+            {
+                donacije = donacije.Where(d => d.KrvnaGrupa.Contains(upit));
+            }
+            return View(await donacije.ToListAsync());
         }
 
         // GET: Donacija/Details/5

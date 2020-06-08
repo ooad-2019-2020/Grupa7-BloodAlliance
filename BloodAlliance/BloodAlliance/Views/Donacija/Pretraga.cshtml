@@ -6,9 +6,12 @@
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<form asp-controller="Donacija" asp-action="Pretraga">
+    <p>
+        Pretraga: <input type="text" name="Upit" />
+        <input type="submit" value="Pretrazi" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>

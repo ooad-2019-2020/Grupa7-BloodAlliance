@@ -31,9 +31,16 @@ namespace BloodAlliance.Controllers
         }
 
         // GET: Donor
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Pretraga(string upit)
         {
-            return View(await _context.Donor.ToListAsync());
+            var donori = _context.Donor.AsQueryable();
+
+            if(!string.IsNullOrEmpty(upit))
+            {
+                donori = donori.Where(d => d.KrvnaGrupa.Contains(upit));
+            }
+
+            return View(await donori.ToListAsync());
         }
 
         public IActionResult Donor (string? username)
