@@ -72,7 +72,7 @@ namespace BloodAlliance.Controllers
                             return RedirectToAction("Index", "Donacija");
                         } else if (role == "Bolnica")
                         {
-                            return RedirectToAction("Index", "Donacija");
+                            return RedirectToAction("Index", "Bolnica");
                         }
                     }
                 }

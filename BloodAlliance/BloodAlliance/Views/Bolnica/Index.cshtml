@@ -1,65 +1,91 @@
-﻿@model IEnumerable<BloodAlliance.Models.Bolnica>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Naziv)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Username)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Password)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BrojTelefona)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Adresa)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Naziv)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BrojTelefona)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Adresa)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.BolnicaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BolnicaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.BolnicaId">Delete</a>
-            </td>
-        </tr>
+@{
+    Layout = null;
 }
-    </tbody>
-</table>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/bolnica.css" />
+
+</head>
+<body class="background">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav">
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                    <button type="submit" class="nav-link btn btn-link text-dark"><b>LOGOUT</b></button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                            </li>
+                        }
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <h1 style="margin-left: 195px">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+    </h1>
+    <div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <section class="form-container">
+                    <hr />
+                    <div class="form-group">
+                        <a href="/Donor/Index" class="btn btn-light btn-block" role="button" aria-pressed="true"> Pretraži donore </a>
+                    </div>
+                    <div class="form-group">
+                        <a href="/Donacija/Index" class="btn btn-light btn-block" role="button" aria-pressed="true"> Pretraži donacije </a>
+                    </div>
+                    <hr />
+                </section>
+
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        </div>
+    </div>
+
+    <div style="text-align: center; position:fixed; bottom: 5px; left: 80vh">
+        <h1> Blood Alliance </h1>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>
+

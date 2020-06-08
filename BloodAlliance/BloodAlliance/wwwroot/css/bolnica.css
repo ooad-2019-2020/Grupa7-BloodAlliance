@@ -1,0 +1,28 @@
+﻿.background 
+{
+    background: url('../Images/bolnicabgpola.jpg') no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.imgbox {
+    display: grid;
+    height: 100%;
+}
+
+.center-fit {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+.form-container {
+    padding: 30px 40px;
+    margin-top: 10vh;
+    margin-left: 20vh;
+    
+}
+
+.section-background {
+    background: url('../Images/FotoJet.jpg');
+}
