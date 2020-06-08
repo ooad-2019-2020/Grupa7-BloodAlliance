@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using BloodAlliance.Areas.Identity.Pages.Account;
 using Microsoft.AspNetCore.Authentication;
+using System.Text;
 
 namespace BloodAlliance.Controllers
 {
@@ -35,9 +36,9 @@ namespace BloodAlliance.Controllers
             return View(await _context.Donor.ToListAsync());
         }
 
-        public IActionResult Donor (string? email)
+        public IActionResult Donor (string? username)
         {
-            Donor donor = _context.Donor.FirstOrDefault(donor => donor.Email == email);
+            Donor donor = _context.Donor.FirstOrDefault(donor => donor.Username == username);
 
             ViewBag.Ime = donor.Ime;
             ViewBag.Prezime = donor.Prezime;
@@ -92,6 +93,9 @@ namespace BloodAlliance.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("DonorId,Ime,Prezime,Username,Password,Email,BrojTelefona,Jmbg,KrvnaGrupa,RhFaktor,BrojDarivanja,TjelesnaTezina,MjestoDarivanja,DatumPosljednjeDonacije,Hemoglobin,KrvniPritisak,ZdravstvenaHistorijaId")] Donor donor, string returnUrl)
         {
+            donor.Username = GenerisiUsername(donor.Ime, donor.Prezime);
+            donor.Password = donor.Jmbg + donor.Ime.Substring(0, 1).ToLower() + donor.Prezime.Substring(0, 1).ToLower();
+
             var user = new IdentityUser { UserName = donor.Username, Email = donor.Email, PhoneNumber = donor.BrojTelefona };
             var result = await _userManager.CreateAsync(user, donor.Password);
             await _userManager.AddToRoleAsync(user, "Donor");
@@ -100,10 +104,7 @@ namespace BloodAlliance.Controllers
             await _context.Donor.AddAsync(donor);
             await _context.SaveChangesAsync();
 
-            
-
-
-                return View(donor);
+            return View(donor);
         }
 
         // GET: Donor/Edit/5
@@ -189,6 +190,60 @@ namespace BloodAlliance.Controllers
         private bool DonorExists(int id)
         {
             return _context.Donor.Any(e => e.DonorId == id);
+        }
+
+        private string GenerisiUsername(string ime, string prezime)
+        {
+            string username;
+
+            if(prezime.Length > 8)
+            {
+                username = ime.Substring(0, 1).ToLower() + prezime.Substring(0,7).ToLower();
+            } else
+            {
+                username = ime.Substring(0, 1).ToLower() + prezime.ToLower();
+            }
+            
+
+            StringBuilder builder = new StringBuilder(username);
+
+            for(int i=0; i<builder.Length; i++)
+            {
+                if(builder[i] == 'č' || builder[i] == 'ć')
+                {
+                    builder[i] = 'c';
+                } else if (builder[i] == 'đ')
+                {
+                    builder[i] = 'd';
+                } else if (builder[i] == 'š')
+                {
+                    builder[i] = 's';
+                } else if (builder[i] == 'ž')
+                {
+                    builder[i] = 'z';
+                }
+            }
+
+            username = builder.ToString();
+            int dodatak = 1;
+
+            while(ProvjeriUsername(username))
+            {
+                username = username + (dodatak++).ToString();
+            }
+
+            return username;
+        }
+
+        private bool ProvjeriUsername(string username)
+        {
+            List<Donor> donori = _context.Donor.ToList();
+
+            foreach(var donor in donori)
+            {
+                if (donor.Username.Equals(username)) return true;
+            }
+            return false;
         }
     }
 }

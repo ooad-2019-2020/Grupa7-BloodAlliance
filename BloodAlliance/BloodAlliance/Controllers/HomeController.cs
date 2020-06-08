@@ -72,8 +72,8 @@ namespace BloodAlliance.Controllers
                         {
                             if (role == "Donor")
                             {
-                                Donor donor = _context.Donor.FirstOrDefault(donor => donor.Username == model.Username);
-                                return RedirectToAction("Donor", new RouteValueDictionary(new { controller = "Donor", action = "Donor", email = donor.Email }));
+                                Donor donor = _context.Donor.FirstOrDefault(donor => donor.Username == model.Username); 
+                                return RedirectToAction("Donor", new RouteValueDictionary(new { controller = "Donor", action = "Donor", username = donor.Username }));
                             }
                             else if (role == "Administrator")
                             {
