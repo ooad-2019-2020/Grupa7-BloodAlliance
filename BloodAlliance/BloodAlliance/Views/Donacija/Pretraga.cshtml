@@ -34,29 +34,31 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SifraDonacije)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KrvnaGrupa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DatumDonacije)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RhFaktor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImeDoktora)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.DonacijaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DonacijaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DonacijaId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SifraDonacije)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KrvnaGrupa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DatumDonacije)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RhFaktor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImeDoktora)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DonacijaId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.DonacijaId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.DonacijaId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
