@@ -99,7 +99,6 @@ public class Donor
 
         public void PogledajProfil() { }
         public void PrikaziZdravstvenuHistoriju() { }
-        public void UnosDonora(Donor donor) { }
     }
     
 }

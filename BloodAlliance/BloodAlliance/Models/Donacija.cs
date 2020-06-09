@@ -25,7 +25,6 @@ namespace BloodAlliance.Models
         public string ImeDoktora { get; set; }
         //[Required]
         public virtual Donor Donor { get; set; }
-        public void UnosDonacije(Donacija donacija) { }
 
         public Donacija() { }
 
