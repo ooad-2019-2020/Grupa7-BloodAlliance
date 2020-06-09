@@ -34,13 +34,14 @@ namespace BloodAlliance.Controllers
         public async Task<IActionResult> Pretraga(string upit)
         {
             var donori = _context.Donor.AsQueryable();
-            foreach(var donor in donori)
+            foreach (var donor in donori)
             {
                 donor.PromijeniStatus();
                 _context.Update(donor);
+                _context.SaveChangesAsync();
             }
 
-            if(!string.IsNullOrEmpty(upit))
+            if (!string.IsNullOrEmpty(upit))
             {
                 donori = donori.Where(d => d.KrvnaGrupa.Contains(upit));
             }
@@ -51,8 +52,19 @@ namespace BloodAlliance.Controllers
         public IActionResult Donor (string? username)
         {
             Donor donor = _context.Donor.FirstOrDefault(donor => donor.Username == username);
-            donor.PromijeniStatus();
-            _context.Update(donor); 
+
+            statusDonora stariStatus = donor.StatusDonora;
+
+            /*donor.PromijeniStatus();
+            _context.Update(donor);
+            await _context.SaveChangesAsync();
+
+            if(stariStatus == statusDonora.neMozeDatiKrv && stariStatus != donor.StatusDonora)
+            {
+                ObavijestDonor obavijest = new ObavijestDonor();
+                await _context.ObavijestDonor.AddAsync(obavijest);
+                await _context.SaveChangesAsync();
+            }*/
 
             ViewBag.Ime = donor.Ime;
             ViewBag.Prezime = donor.Prezime;

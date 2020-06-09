@@ -72,8 +72,20 @@ namespace BloodAlliance.Controllers
                         {
                             if (role == "Donor")
                             {
-                                Donor donor = _context.Donor.FirstOrDefault(donor => donor.Username == model.Username); 
-                                return RedirectToAction("Donor", new RouteValueDictionary(new { controller = "Donor", action = "Donor", username = donor.Username }));
+                                Donor donor = _context.Donor.FirstOrDefault(donor => donor.Username == model.Username);
+                            statusDonora stariStatus = donor.StatusDonora;
+
+                            donor.PromijeniStatus();
+                            _context.Update(donor);
+                            await _context.SaveChangesAsync();
+
+                            if (stariStatus == statusDonora.neMozeDatiKrv && stariStatus != donor.StatusDonora)
+                            {
+                                ObavijestDonor obavijest = new ObavijestDonor();
+                                await _context.ObavijestDonor.AddAsync(obavijest);
+                                await _context.SaveChangesAsync();
+                            }
+                            return RedirectToAction("Donor", new RouteValueDictionary(new { controller = "Donor", action = "Donor", username = donor.Username }));
                             }
                             else if (role == "Administrator")
                             {

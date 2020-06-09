@@ -9,9 +9,14 @@ namespace BloodAlliance.Models
     {
         public int ObavijestDonorId { get; set; }
         public string Obavijest { get; set; }
+        public DateTime DatumObavijesti { get; set; }
         public virtual Donor Donor { get; set; }
 
-        public ObavijestDonor() { }
+        public ObavijestDonor()
+        {
+            Obavijest = "Ponovno mozete donirati krv. :)";
+            DatumObavijesti = DateTime.Now;
+        }
 
     }
 }
