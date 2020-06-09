@@ -6,16 +6,22 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BloodAlliance.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 
 namespace BloodAlliance.Controllers
 {
     public class ZahtjevController : Controller
     {
         private readonly BAContext _context;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public ZahtjevController(BAContext context)
+        public ZahtjevController(BAContext context, IHttpContextAccessor httpContextAccessor, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _httpContextAccessor = httpContextAccessor;
+            _userManager = userManager;
         }
 
         // GET: Zahtjev
@@ -53,13 +59,21 @@ namespace BloodAlliance.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ZahtjevId,Datum,KrvnaGrupa")] Zahtjev zahtjev)
+        public async Task<IActionResult> Create([Bind("ZahtjevId,Datum,KrvnaGrupa,RhFaktor,Kolicina")] Zahtjev zahtjev)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(zahtjev);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var user = _httpContextAccessor.HttpContext.User;
+                var userDb = await _userManager.GetUserAsync(user);
+                if (userDb != null && user.IsInRole("Bolnica"))
+                {
+                    var bolnica = _context.Bolnica.FirstOrDefault(b => userDb.UserName.Equals(b.Username));
+                    zahtjev.NazivBolnice = bolnica.Naziv;
+
+                    _context.Add(zahtjev);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
             return View(zahtjev);
         }

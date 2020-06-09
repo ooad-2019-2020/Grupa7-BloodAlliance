@@ -12,6 +12,11 @@ namespace BloodAlliance.Models
         public DateTime Datum { get; set; }
         [Display(Name = "Krvna grupa")]
         public string KrvnaGrupa { get; set; }
+        public string RhFaktor { get; set; }
+        public int Kolicina { get; set; }
+
+        public String NazivBolnice { get; set; }
+
         public virtual Bolnica Bolnica { get; set; }
 
         public Zahtjev() { }

@@ -72,7 +72,28 @@ public class Donor
 
         public void PromijeniStatus()
         {
-            //if(this.Pol.Equals())
+            if (this.Pol == pol.musko)
+            {
+                if (DateTime.Now.Subtract(DatumPosljednjeDonacije).TotalDays > 93)
+                {
+                    StatusDonora = statusDonora.mozeDatiKrv;
+                }
+                else
+                {
+                    StatusDonora = statusDonora.neMozeDatiKrv;
+                }
+            }
+            else
+            {
+                if (DateTime.Now.Subtract(DatumPosljednjeDonacije).TotalDays > 124)
+                {
+                    StatusDonora = statusDonora.mozeDatiKrv;
+                }
+                else
+                {
+                    StatusDonora = statusDonora.neMozeDatiKrv;
+                }
+            }
         }
 
         public void PogledajProfil() { }

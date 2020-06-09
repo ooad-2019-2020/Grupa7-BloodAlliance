@@ -36,6 +36,7 @@ namespace BloodAlliance
             services.AddDbContext<BAContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BAConnection")));
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddHttpContextAccessor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

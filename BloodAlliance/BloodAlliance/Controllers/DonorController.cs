@@ -34,6 +34,11 @@ namespace BloodAlliance.Controllers
         public async Task<IActionResult> Pretraga(string upit)
         {
             var donori = _context.Donor.AsQueryable();
+            foreach(var donor in donori)
+            {
+                donor.PromijeniStatus();
+                _context.Update(donor);
+            }
 
             if(!string.IsNullOrEmpty(upit))
             {
@@ -46,6 +51,8 @@ namespace BloodAlliance.Controllers
         public IActionResult Donor (string? username)
         {
             Donor donor = _context.Donor.FirstOrDefault(donor => donor.Username == username);
+            donor.PromijeniStatus();
+            _context.Update(donor); 
 
             ViewBag.Ime = donor.Ime;
             ViewBag.Prezime = donor.Prezime;
