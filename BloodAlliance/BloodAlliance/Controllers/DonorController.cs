@@ -69,7 +69,6 @@ namespace BloodAlliance.Controllers
             ViewBag.Ime = donor.Ime;
             ViewBag.Prezime = donor.Prezime;
             ViewBag.Username = donor.Username;
-            ViewBag.Password = donor.Password;
             ViewBag.Email = donor.Email;
             ViewBag.BrojTelefona = donor.BrojTelefona;
             ViewBag.Jmbg = donor.Jmbg;

@@ -63,10 +63,8 @@ public class Donor
         public string KrvniPritisak { get; set; }
         public pol Pol { get; set; }
         public statusDonora StatusDonora { get; set; }
-        [Display(Name = "Zdravstvena historija")]
-        public int ZdravstvenaHistorijaId { get; set; }
-        public virtual ZdravstvenaHistorija ZdravstvenaHistorija { get; set; }
-        public virtual ICollection<Donacija> Donacije { get; set; }
+        
+       public virtual ICollection<Donacija> Donacije { get; set; }
         public virtual ICollection<ObavijestDonor> Obavijesti { get; set; }
 
         public Donor() { }
@@ -98,7 +96,6 @@ public class Donor
         }
 
         public void PogledajProfil() { }
-        public void PrikaziZdravstvenuHistoriju() { }
     }
     
 }

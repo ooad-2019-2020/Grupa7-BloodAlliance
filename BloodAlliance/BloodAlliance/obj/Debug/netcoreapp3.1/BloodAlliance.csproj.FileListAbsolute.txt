@@ -277,11 +277,6 @@ C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\
 C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Zahtjev\Details.cshtml.g.cs
 C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Zahtjev\Edit.cshtml.g.cs
 C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Zahtjev\Index.cshtml.g.cs
-C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\ZdravstvenaHistorija\Create.cshtml.g.cs
-C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\ZdravstvenaHistorija\Delete.cshtml.g.cs
-C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\ZdravstvenaHistorija\Details.cshtml.g.cs
-C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\ZdravstvenaHistorija\Edit.cshtml.g.cs
-C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\ZdravstvenaHistorija\Index.cshtml.g.cs
 C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\BloodAlliance.csprojAssemblyReference.cache
 C:\Users\User\source\repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\User\source\repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Gost\Index.cshtml.g.cs

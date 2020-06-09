@@ -16,8 +16,6 @@ namespace BloodAlliance.Models
         public DbSet<ObavijestBolnica> ObavijestBolnica { get; set; }
         public DbSet<ObavijestDonor> ObavijestDonor { get; set; }
         public DbSet<Zahtjev> Zahtjev { get; set; }
-        public DbSet<ZdravstvenaHistorija> ZdravstvenaHistorija { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -27,7 +25,6 @@ namespace BloodAlliance.Models
             modelBuilder.Entity<ObavijestBolnica>().ToTable("ObavijestBolnica");
             modelBuilder.Entity<ObavijestDonor>().ToTable("ObavijestDonor");
             modelBuilder.Entity<Zahtjev>().ToTable("Zahtjev");
-            modelBuilder.Entity<ZdravstvenaHistorija>().ToTable("ZdravstvenaHistorija");
         }
 
     }
