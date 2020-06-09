@@ -30,5 +30,7 @@ namespace BloodAlliance.Models
             List<string> listaBolesti = new List<string> { };
             return listaBolesti;
         }
+
+        public ZdravstvenaHistorija() { }
     }
 }

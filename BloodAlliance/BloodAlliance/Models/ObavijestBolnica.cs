@@ -15,5 +15,14 @@ namespace BloodAlliance.Models
         public virtual ICollection<Donacija> Donacije { get; set; }
         public virtual Bolnica Bolnica { get; set; }
 
+        public ObavijestBolnica() { }
+
+        public ObavijestBolnica(string krvnaGrupa, int kolicina, DateTime datum)
+        {
+            KrvnaGrupa = krvnaGrupa;
+            Kolicina = kolicina;
+            Datum = datum;
+        }
+
     }
 }

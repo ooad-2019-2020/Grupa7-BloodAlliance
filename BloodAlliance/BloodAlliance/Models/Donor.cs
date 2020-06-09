@@ -10,7 +10,7 @@ public enum pol
 {
     musko,
     zensko
-}
+};
 
 public enum statusDonora
 {
@@ -68,9 +68,11 @@ public class Donor
         public virtual ICollection<Donacija> Donacije { get; set; }
         public virtual ICollection<ObavijestDonor> Obavijesti { get; set; }
 
-        public void PromijeniStatus(statusDonora NoviStatus)
-        {
+        public Donor() { }
 
+        public void PromijeniStatus()
+        {
+            //if(this.Pol.Equals())
         }
 
         public void PogledajProfil() { }

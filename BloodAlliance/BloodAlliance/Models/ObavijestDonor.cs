@@ -11,5 +11,7 @@ namespace BloodAlliance.Models
         public string Obavijest { get; set; }
         public virtual Donor Donor { get; set; }
 
+        public ObavijestDonor() { }
+
     }
 }

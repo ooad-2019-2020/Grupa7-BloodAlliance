@@ -14,6 +14,8 @@ namespace BloodAlliance.Models
         public string KrvnaGrupa { get; set; }
         public virtual Bolnica Bolnica { get; set; }
 
+        public Zahtjev() { }
+
 
     }
 }

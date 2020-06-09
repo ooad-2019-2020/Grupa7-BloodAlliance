@@ -24,15 +24,17 @@ namespace BloodAlliance.Models
         public virtual ICollection<Zahtjev> Zahtjevi { get; set; }
         public virtual ICollection<ObavijestBolnica> Obavijesti { get; set; }
 
-        /*public Bolnica(int id, string naziv, string username, string password, string email, string brojTelefona, string adresa)
+        public Bolnica() { }
+
+      public Bolnica(string naziv, string username, string password, string email, string brojTelefona, string adresa)
         {
-            BolnicaId = id;
+            //BolnicaId = id;
             Username = username;
             Password = password;
             Email = email;
             BrojTelefona = brojTelefona;
             Adresa = adresa;
-        }*/
+        }
 
         public Zahtjev PosaljiZahtjevZaDonaciju()
         {

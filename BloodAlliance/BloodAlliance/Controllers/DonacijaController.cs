@@ -67,9 +67,9 @@ namespace BloodAlliance.Controllers
                 donacija.SifraDonacije = GenerisiSifru(donacija);
                 _context.Add(donacija);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Pretraga", "Donacija");
             
-            return View(donacija);
+           // return View(donacija);
         }
 
         // GET: Donacija/Edit/5
@@ -171,7 +171,7 @@ namespace BloodAlliance.Controllers
                 sifra = sifra + "NEG";
             }
 
-            sifra = sifra + donacija.DatumDonacije.Date.ToString("DDMMYY");
+            sifra = sifra + donacija.DatumDonacije.Date.ToString("ddMMyy");
 
             Random randomNumber = new Random();
             String dodatak = "";
