@@ -4,14 +4,16 @@ using BloodAlliance.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BloodAlliance.Migrations
 {
     [DbContext(typeof(BAContext))]
-    partial class BAContextModelSnapshot : ModelSnapshot
+    [Migration("20200610104812_ObavijestDonor")]
+    partial class ObavijestDonor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

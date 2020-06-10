@@ -55,17 +55,8 @@ namespace BloodAlliance.Controllers
 
             statusDonora stariStatus = donor.StatusDonora;
 
-            /*donor.PromijeniStatus();
-            _context.Update(donor);
-            await _context.SaveChangesAsync();
 
-            if(stariStatus == statusDonora.neMozeDatiKrv && stariStatus != donor.StatusDonora)
-            {
-                ObavijestDonor obavijest = new ObavijestDonor();
-                await _context.ObavijestDonor.AddAsync(obavijest);
-                await _context.SaveChangesAsync();
-            }*/
-
+            ViewBag.Id = donor.DonorId;
             ViewBag.Ime = donor.Ime;
             ViewBag.Prezime = donor.Prezime;
             ViewBag.Username = donor.Username;
@@ -105,7 +96,7 @@ namespace BloodAlliance.Controllers
         }
 
         // GET: Donor/Create
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             return View();
@@ -116,11 +107,12 @@ namespace BloodAlliance.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> Create([Bind("DonorId,Ime,Prezime,Username,Password,Email,BrojTelefona,Jmbg,KrvnaGrupa,RhFaktor,BrojDarivanja,TjelesnaTezina,MjestoDarivanja,DatumPosljednjeDonacije,Hemoglobin,KrvniPritisak,ZdravstvenaHistorijaId")] Donor donor, string returnUrl)
+        //[Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> Create([Bind("DonorId,Ime,Prezime,Email,BrojTelefona,Jmbg,KrvnaGrupa,RhFaktor,BrojDarivanja,TjelesnaTezina,MjestoDarivanja,DatumPosljednjeDonacije,Hemoglobin,KrvniPritisak")] Donor donor, string returnUrl)
         {
             donor.Username = GenerisiUsername(donor.Ime, donor.Prezime);
-            donor.Password = donor.Jmbg + donor.Ime.Substring(0, 1).ToLower() + donor.Prezime.Substring(0, 1).ToLower();
+            donor.Password = donor.Jmbg + donor.Ime.Substring(0, 1).ToLower() + "." + donor.Prezime.Substring(0, 1).ToUpper();
+            donor.StatusDonora = statusDonora.neMozeDatiKrv;
 
             var user = new IdentityUser { UserName = donor.Username, Email = donor.Email, PhoneNumber = donor.BrojTelefona };
             var result = await _userManager.CreateAsync(user, donor.Password);
@@ -271,5 +263,22 @@ namespace BloodAlliance.Controllers
             }
             return false;
         }
+    public async Task<IActionResult> PregledObavijesti(int? id)
+    {
+        if(id == null)
+        {
+            return NotFound(); 
+        }
+       
+            var obavijesti = _context.ObavijestDonor.AsQueryable();
+            
+
+            
+                obavijesti = obavijesti.Where(obavijest => obavijest.DonorId == id);
+            
+
+            return View(await obavijesti.ToListAsync());
+        }
     }
+
 }

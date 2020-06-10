@@ -20,7 +20,7 @@
 
             <th>
                 Username
-            </th>           
+            </th>
 
             <th>
                 Email
@@ -77,60 +77,61 @@
         <tr></tr>
     </thead>
     <tbody>
-        
-            <tr>
-                <td>
-                    @ViewBag.Ime
-                </td>
-                <td>
-                    @ViewBag.Prezime
-                </td>
-                <td>
-                    @ViewBag.Username
-                </td>              
-                <td>
-                    @ViewBag.Email
-                </td>
-                <td>
-                    @ViewBag.BrojTelefona
-                </td>
-                <td>
-                    @ViewBag.Jmbg
-                </td>
-                <td>
-                    @ViewBag.KrvnaGrupa
-                </td>
-                <td>
-                    @ViewBag.RhFaktor
-                </td>
-                <td>
-                    @ViewBag.BrojDarivanja
-                </td>
-                <td>
-                    @ViewBag.TjelesnaTezina
-                </td>
-                <td>
-                    @ViewBag.MjestoDarivanja
-                </td>
-                <td>
-                    @ViewBag.DatumPosljednjeDonacije
-                </td>
-                <td>
-                    @ViewBag.Hemoglobin
-                </td>
-                <td>
-                    @ViewBag.KrvniPritisak
-                </td>
-                <td>
-                    @ViewBag.Pol
-                </td>
-                <td>
-                    @ViewBag.StatusDonora
-                </td>
-                
-            </tr>
-        
+
+        <tr>
+            <td>
+                @ViewBag.Ime
+            </td>
+            <td>
+                @ViewBag.Prezime
+            </td>
+            <td>
+                @ViewBag.Username
+            </td>
+            <td>
+                @ViewBag.Email
+            </td>
+            <td>
+                @ViewBag.BrojTelefona
+            </td>
+            <td>
+                @ViewBag.Jmbg
+            </td>
+            <td>
+                @ViewBag.KrvnaGrupa
+            </td>
+            <td>
+                @ViewBag.RhFaktor
+            </td>
+            <td>
+                @ViewBag.BrojDarivanja
+            </td>
+            <td>
+                @ViewBag.TjelesnaTezina
+            </td>
+            <td>
+                @ViewBag.MjestoDarivanja
+            </td>
+            <td>
+                @ViewBag.DatumPosljednjeDonacije
+            </td>
+            <td>
+                @ViewBag.Hemoglobin
+            </td>
+            <td>
+                @ViewBag.KrvniPritisak
+            </td>
+            <td>
+                @ViewBag.Pol
+            </td>
+            <td>
+                @ViewBag.StatusDonora
+            </td>
+
+        </tr>
+
     </tbody>
 </table>
 
 <a href="/Donor/Create" class="btn btn-danger" role="button" aria-pressed="true"> Kreiraj donora </a>
+<td><button onclick="window.location.href='@Url.Action("PregledObavijesti", "Donor", new { id = ViewBag.Id })'" class="btn btn-danger"           type="button" style="font-size: 15px;">Pregled</button></td>
