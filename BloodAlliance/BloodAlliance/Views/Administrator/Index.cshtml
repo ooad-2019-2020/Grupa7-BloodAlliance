@@ -1,4 +1,14 @@
 ﻿
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "#SAVELIFEDONATEBLOOD";
+}
+
+
+
 @{
     Layout = null;
 }
@@ -10,43 +20,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/admin.css" />
+
 </head>
-<body style="background-color: white">
-    <div style="margin-top: 100px; text-align:center">
-        <h1> Dobro došli u <b><span style="color:darkred">Blood Alliance</span></b>!</h1>
-        <br />
-        <h3><b>Spasi život, daruj krv!</b></h3>
+<body class="container-fluid">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-danger border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BloodAlliance</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <h3> Da li ste znali da jedna donacija krvi može spasiti čak tri života? </h3>
-        <h4> &nbsp;&nbsp; Saznajte sve informacije o procesu donacije krvi. </h4>
-        <h3>Zanima vas šta može prouzrokovati odbijanje vaše donacije? </h3>
-        <h4>&nbsp;&nbsp; Uradite brzi test kratkog pregleda bolesti i saznajte da li ste potencijalni donor. </h4>
-    </div>
-    <br />
-    <div style="text-align: center">
-        <div style="display:inline-block">
-            <a href="/Gost/Informacije" class="nav-link text-dark">
-                <img src="~/Images/voce.png" />
-            </a>
-            <a href="/Gost/Informacije" class="nav-link text-dark"><b>Infromacije</b></a>
-        </div>
-        <div style="display:inline-block">
-            <a href="Test" class="nav-link text-dark">
-                <img src="~/Images/meditacija.png" width="235" height="239" />
-            </a>
-            <a href="Test" class="nav-link text-dark"><b>Test</b></a>
-        </div>
-    </div>
-    <a href="/Donor/Create" class="btn btn-danger" role="button" aria-pressed="true"> Kreiraj donora </a>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <section class="form-container bg-danger">
+                    <hr />
+                    <form id="account" method="post">
+                        <div class="form-group">
+                            <a href="/Donor/Pretraga" class="btn btn-light btn-block"> Pretraga donora </a>
+                        </div>
+                        <div class="form-group">
+                            <a href="/Donacija/Pretraga" class="btn btn-light btn-block"> Pretraži donacije </a>
+                        </div>
+                        <div class="form-group">
+                            <a href="/Donor/Create" class="btn btn-light btn-block">Registracija donora</a>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - BloodAlliance - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    </div>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
 
 </body>
 </html>
+
+
+
+
+
