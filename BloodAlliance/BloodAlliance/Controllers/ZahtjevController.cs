@@ -153,6 +153,16 @@ namespace BloodAlliance.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var zahtjev = await _context.Zahtjev.FindAsync(id);
+
+            var bolnica = await _context.Bolnica.FirstOrDefaultAsync(bolnica => bolnica.Naziv.Equals(zahtjev.NazivBolnice));
+            var obavijest = new ObavijestBolnica();
+            obavijest.BolnicaId = bolnica.BolnicaId;
+            obavijest.KrvnaGrupa = zahtjev.KrvnaGrupa;
+            obavijest.Kolicina = zahtjev.Kolicina;
+            obavijest.Obavijest = "Vas zahtjev je potvrdjen. Potrebna kolicna krvi je poslana na vasu adresu.";
+            _context.ObavijestBolnica.Add(obavijest);
+            await _context.SaveChangesAsync();
+
             _context.Zahtjev.Remove(zahtjev);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

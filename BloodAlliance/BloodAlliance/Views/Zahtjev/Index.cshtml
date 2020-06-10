@@ -41,9 +41,7 @@
                 @Html.DisplayFor(modelItem => item.NazivBolnice)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ZahtjevId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ZahtjevId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ZahtjevId">Delete</a>
+                <a class="btn btn-danger" type="button" style="font-size: 15px" asp-action="Delete" asp-route-id="@item.ZahtjevId">Potvrdi</a>
             </td>
         </tr>
 }
