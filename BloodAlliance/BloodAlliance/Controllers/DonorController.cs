@@ -96,7 +96,7 @@ namespace BloodAlliance.Controllers
         }
 
         // GET: Donor/Create
-        //[Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             return View();
@@ -107,7 +107,7 @@ namespace BloodAlliance.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //[Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Create([Bind("DonorId,Ime,Prezime,Email,BrojTelefona,Jmbg,KrvnaGrupa,RhFaktor,BrojDarivanja,TjelesnaTezina,MjestoDarivanja,DatumPosljednjeDonacije,Hemoglobin,KrvniPritisak")] Donor donor, string returnUrl)
         {
             donor.Username = GenerisiUsername(donor.Ime, donor.Prezime);

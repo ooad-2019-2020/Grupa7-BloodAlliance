@@ -95,7 +95,6 @@ public class Donor
             }
         }
 
-        public void PogledajProfil() { }
     }
     
 }
