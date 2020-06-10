@@ -467,11 +467,6 @@ C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\ob
 C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Zahtjev\Details.cshtml.g.cs
 C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Zahtjev\Edit.cshtml.g.cs
 C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Zahtjev\Index.cshtml.g.cs
-C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\ZdravstvenaHistorija\Create.cshtml.g.cs
-C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\ZdravstvenaHistorija\Delete.cshtml.g.cs
-C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\ZdravstvenaHistorija\Details.cshtml.g.cs
-C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\ZdravstvenaHistorija\Edit.cshtml.g.cs
-C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\ZdravstvenaHistorija\Index.cshtml.g.cs
 C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\BloodAlliance.RazorTargetAssemblyInfo.cache
@@ -507,3 +502,4 @@ C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\ob
 C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Donacija\Pretraga.cshtml.g.cs
 C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Donor\Donor.cshtml.g.cs
 C:\Users\User\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Donor\Pretraga.cshtml.g.cs
+C:\Users\Fahira\Source\Repos\Grupa7-BloodAlliance\BloodAlliance\BloodAlliance\obj\Debug\netcoreapp3.1\Razor\Views\Donor\PregledObavijesti.cshtml.g.cs

@@ -4,14 +4,16 @@ using BloodAlliance.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BloodAlliance.Migrations
 {
     [DbContext(typeof(BAContext))]
-    partial class BAContextModelSnapshot : ModelSnapshot
+    [Migration("20200610094526_zdravstvenaHistorija")]
+    partial class zdravstvenaHistorija
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -204,7 +206,7 @@ namespace BloodAlliance.Migrations
                     b.Property<DateTime>("DatumObavijesti")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DonorId")
+                    b.Property<int?>("DonorId")
                         .HasColumnType("int");
 
                     b.Property<string>("Obavijest")
@@ -271,9 +273,7 @@ namespace BloodAlliance.Migrations
                 {
                     b.HasOne("BloodAlliance.Models.Donor", "Donor")
                         .WithMany("Obavijesti")
-                        .HasForeignKey("DonorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DonorId");
                 });
 
             modelBuilder.Entity("BloodAlliance.Models.Zahtjev", b =>

@@ -1,157 +1,137 @@
 ﻿
-@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
-
 @{
     ViewData["Title"] = "#SAVELIFEDONATEBLOOD";
 }
 
+<h2>#SAVELIFEDONATEBLOOD</h2>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>
+                Ime
+            </th>
 
 
-@{
-    Layout = null;
-}
+            <th>
+                Prezime
+            </th>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+            <th>
+                Username
+            </th>
 
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-danger border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BloodAlliance</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div  style="margin-left: 260px">
-        <h2>#SAVELIFEDONATEBLOOD</h2>
+            <th>
+                Email
+            </th>
 
-        <table class="table">
-            <tr>
-                <td><b> Ime </b></td>
-                <td>
-                    @ViewBag.Ime
-                </td>
-            </tr>
-            <tr>
-                <td> <b>Prezime </b></td>
-                <td>
-                    @ViewBag.Prezime
-                </td>
-            </tr>
-            <tr>
-                <td><b> Username</b> </td>
-                <td>
-                    @ViewBag.Username
-                </td>
-            </tr>
-            <tr>
-                <td><b> Email</b> </td>
-                <td>
-                    @ViewBag.Email
-                </td>
-            </tr>
-            <tr>
-                <td><b> Broj telefona</b> </td>
-                <td>
-                    @ViewBag.BrojTelefona
-                </td>
-            </tr>
-            <tr>
-                <td> <b>Jmbg </b></td>
-                <td>
-                    @ViewBag.Jmbg
-                </td>
-            </tr>
-            <tr>
-                <td><b> Krvna grupa</b> </td>
-                <td>
-                    @ViewBag.KrvnaGrupa
-                </td>
-            </tr>
-            <tr>
-                <td><b> Rh faktor </b></td>
-                <td>
-                    @ViewBag.RhFaktor
-                </td>
-            </tr>
-            <tr>
-                <td><b> Broj darivanja </b></td>
-                <td>
-                    @ViewBag.BrojDarivanja
-                </td>
-            </tr>
-            <tr>
-                <td><b>Tjelesna tezina </b> </td>
-                <td>
-                    @ViewBag.TjelesnaTezina
-                </td>
-            </tr>
-            <tr>
-                <td><b> Mjesto darivanja </b></td>
-                <td>
-                    @ViewBag.MjestoDarivanja
-                </td>
-            </tr>
-            <tr>
-                <td><b> Datum posljednje donacije </b></td>
-                <td>
-                    @ViewBag.DatumPosljednjeDonacije
-                </td>
-            </tr>
-            <tr>
-                <td><b> Hemoglobin </b></td>
-                <td>
-                    @ViewBag.Hemoglobin
-                </td>
-            </tr>
-            <tr>
-                <td><b> Krvni pritisak </b></td>
-                <td>
-                    @ViewBag.KrvniPritisak
-                </td>
-            </tr>
-            <tr>
-                <td><b> Pol </b></td>
-                <td>
-                    @ViewBag.Pol
-                </td>
-            </tr>
-            <tr>
-                <td><b> Status donora</b> </td>
-                <td>
-                    @ViewBag.StatusDonora
-                </td>
-            </tr>
+            <th>
+                BrojTelefona
+            </th>
 
-        </table>
-    </div>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+            <th>
+                Jmbg
+            </th>
 
-</body>
-</html>
+            <th>
+                KrvnaGrupa
+            </th>
 
+            <th>
+                RhFaktor
+            </th>
+
+            <th>
+                BrojDarivanja
+            </th>
+
+            <th>
+                TjelesnaTezina
+            </th>
+
+            <th>
+                MjestoDarivanja
+            </th>
+
+            <th>
+                DatumPosljednjeDonacije
+            </th>
+
+            <th>
+                Hemoglobin
+            </th>
+
+            <th>
+                KrvniPritisak
+            </th>
+
+            <th>
+                Pol
+            </th>
+
+            <th>
+                StatusDonora
+            </th>
+        </tr>
+        <tr></tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>
+                @ViewBag.Ime
+            </td>
+            <td>
+                @ViewBag.Prezime
+            </td>
+            <td>
+                @ViewBag.Username
+            </td>
+            <td>
+                @ViewBag.Email
+            </td>
+            <td>
+                @ViewBag.BrojTelefona
+            </td>
+            <td>
+                @ViewBag.Jmbg
+            </td>
+            <td>
+                @ViewBag.KrvnaGrupa
+            </td>
+            <td>
+                @ViewBag.RhFaktor
+            </td>
+            <td>
+                @ViewBag.BrojDarivanja
+            </td>
+            <td>
+                @ViewBag.TjelesnaTezina
+            </td>
+            <td>
+                @ViewBag.MjestoDarivanja
+            </td>
+            <td>
+                @ViewBag.DatumPosljednjeDonacije
+            </td>
+            <td>
+                @ViewBag.Hemoglobin
+            </td>
+            <td>
+                @ViewBag.KrvniPritisak
+            </td>
+            <td>
+                @ViewBag.Pol
+            </td>
+            <td>
+                @ViewBag.StatusDonora
+            </td>
+
+        </tr>
+
+    </tbody>
+</table>
+
+<a href="/Donor/Create" class="btn btn-danger" role="button" aria-pressed="true"> Kreiraj donora </a>
+<td><button onclick="window.location.href='@Url.Action("PregledObavijesti", "Donor", new { id = ViewBag.Id })'" class="btn btn-danger"           type="button" style="font-size: 15px;">Pregled</button></td>
