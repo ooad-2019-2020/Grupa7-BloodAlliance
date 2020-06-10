@@ -1,4 +1,9 @@
 ﻿@{
+    ViewData["Title"] = "Index";
+}
+
+
+@{
     Layout = null;
 }
 
@@ -9,39 +14,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/login.css" />
+
 </head>
-<body style="background-color: white">
-    <nav style="text-align: center">
-        <img src="~/Images/Logo3.png" width="870" height="450" />
-    </nav>
+<body class="background">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+            <div>
+                <a style="margin-left: 180px" class="btn btn-outline-danger" asp-area="" asp-controller="Gost" asp-action="Informacije">O nama</a>
+                <a style="margin-left:20px" class="btn btn-outline-danger" asp-area="" asp-controller="Home" asp-action="Login">Log In</a>
+                <a style="margin-left:20px" class="btn btn-outline-danger" asp-area="" asp-controller="Gost" asp-action="Index">Gost</a>
+                <a style="margin-left: 790px" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><b>Kontakt</b></a>
 
-    <div style="text-align: center">
-        <div style="text-align: center; display:inline-block">
-            <a href="/Home/Login" class="nav-link text-dark" > <img src="~/Images/loginn.png" height="220" width="240" /> </a>
-            <a href="/Home/Login" class="nav-link text-dark" ><b>LOGIN</b></a>
-        </div>
-        <div style="text-align: center; display:inline-block">
-            <a href="/Gost/Index" class="nav-link text-dark">
-                <img src="~/Images/Guest.png" height="228" width="220" />
-            </a>
-            <p>
-                <a href="/Gost/Index" class="nav-link text-dark"><b>GOST</b></a>
-            </p>
-        </div>
-    </div>
+            </div>
+        </nav>
+    </header>
 
-    <div style="position: fixed; bottom: 3px; left: 70px">
-        <img src="~/Images/SaveLifeLogo.png" width="300" height="30" />
-    </div>
-
+    <h1 style="margin-left: 290px; margin-top: 0px; font-size: 180px" class="text-danger"><b>Blood</b></h1>
+    <h1  style="margin-left: 145px; margin-top: 45px; font-size: 150px"><b>Alliance</b></h1>
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2020 - BloodAlliance - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
 </body>
 </html>
+
