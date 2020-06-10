@@ -32,10 +32,6 @@ box-shadow: 10px 14px 13px -1px rgba(161,161,161,1);
     background-image: url('../Images/banner2.2.jpg');
 }
 
-.bg {
-    background-color: #FC4545;
-}
-
 .floated-element {
         transform: translateX(-0px);
 }
