@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using BloodAlliance.Models;
 using System.Globalization;
 using System.Security.Cryptography;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BloodAlliance.Controllers
 {
@@ -51,6 +52,7 @@ namespace BloodAlliance.Controllers
         }
 
         // GET: Donacija/Create
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             return View();
@@ -61,6 +63,7 @@ namespace BloodAlliance.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Create([Bind("DonacijaId,SifraDonacije,KrvnaGrupa,DatumDonacije,RhFaktor,ImeDoktora")] Donacija donacija)
         {
             
