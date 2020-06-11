@@ -1,0 +1,23 @@
+﻿.background {
+    background: url('../Images/backgroundfinal.jpg') no-repeat;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.form-container {
+    border: 1px;
+    border-color: darkblue;
+    border-style: outset;
+    padding: 30px 40px;
+    margin-top: 20vh;
+    -webkit-box-shadow: 10px 14px 13px -1px rgba(161,161,161,1);
+    -moz-box-shadow: 10px 14px 13px -1px rgba(161,161,161,1);
+    box-shadow: 10px 14px 13px -1px rgba(161,161,161,1);
+
+}
+
+.section-background {
+    background: url('../Images/FotoJet.jpg');
+   
+}
