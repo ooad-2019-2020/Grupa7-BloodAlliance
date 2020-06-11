@@ -126,6 +126,7 @@ namespace BloodAlliance.Controllers
         }
 
         // GET: Donor/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -146,6 +147,7 @@ namespace BloodAlliance.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int id, [Bind("DonorId,Ime,Prezime,Username,Password,Email,BrojTelefona,Jmbg,KrvnaGrupa,RhFaktor,BrojDarivanja,TjelesnaTezina,MjestoDarivanja,DatumPosljednjeDonacije,Hemoglobin,KrvniPritisak,Pol,StatusDonora,ZdravstvenaHistorijaId")] Donor donor)
         {
             if (id != donor.DonorId)
@@ -177,6 +179,7 @@ namespace BloodAlliance.Controllers
         }
 
         // GET: Donor/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -197,6 +200,7 @@ namespace BloodAlliance.Controllers
         // POST: Donor/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var donor = await _context.Donor.FindAsync(id);
@@ -263,7 +267,9 @@ namespace BloodAlliance.Controllers
             }
             return false;
         }
-    public async Task<IActionResult> PregledObavijesti(int? id)
+
+        [Authorize(Roles = "Donor")]
+        public async Task<IActionResult> PregledObavijesti(int? id)
     {
         if(id == null)
         {
