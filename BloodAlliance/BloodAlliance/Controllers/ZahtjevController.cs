@@ -50,7 +50,7 @@ namespace BloodAlliance.Controllers
         }
 
         // GET: Zahtjev/Create
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Bolnica")]
         public IActionResult Create()
         {
             return View();
@@ -61,7 +61,7 @@ namespace BloodAlliance.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Bolnica")]
         public async Task<IActionResult> Create([Bind("ZahtjevId,Datum,KrvnaGrupa,RhFaktor,Kolicina")] Zahtjev zahtjev)
         {
             if (ModelState.IsValid)
@@ -75,7 +75,7 @@ namespace BloodAlliance.Controllers
 
                     _context.Add(zahtjev);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction("Index","Bolnica");
                 }
             }
             return View(zahtjev);
